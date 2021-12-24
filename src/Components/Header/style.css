@@ -1,0 +1,34 @@
+.headerText {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 0 5px;
+}
+
+.whiteText {
+    color: white;
+}
+
+.M {
+    background-color: #FFB400;
+}
+
+.A {
+    background-color: #FF5A5F;
+}
+
+.S {
+    background-color: #8CE071;
+}
+
+.T {
+    background-color: #00D1C1;
+}
+
+.E {
+    background-color: #007A87;
+}
+
+.R {
+    background-color: #7B0051;
+}
+
