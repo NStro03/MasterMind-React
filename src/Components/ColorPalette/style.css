@@ -1,0 +1,8 @@
+.ColorPaletteContainer{
+    font-size: 20px;
+    align-items: center;
+    border: 1px solid black;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+}

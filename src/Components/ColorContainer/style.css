@@ -1,0 +1,10 @@
+.colorCircle {
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: auto;
+    margin: 5px;
+}
