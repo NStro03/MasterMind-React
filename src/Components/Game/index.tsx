@@ -1,27 +1,31 @@
 import React, { useState } from "react";
 import ColorPalette from "../ColorPalette";
 import "./style.css"
-import {colorList, initialState} from "../Utils/constants";
+import {COLOR_LIST, INITIAL_GAME_STATE, TOTAL_ATTEMPTS} from "../Utils/constants";
+import AttemptsContainer from "../AttemptsContainer";
+import { initializeBoard } from "../Utils/util";
 
 
 function Game() {
 
-    const [state, setstate] = useState(initialState)
+    const [gameState, setGameState] = useState(INITIAL_GAME_STATE)
+    const [boardColors, setboardColors] = useState(initializeBoard())
+    // const [boardHints, setBoardHints] = useState(initialBoardHints)
 
-    function colorProvider(col: string) {
-        console.log("Color Provided: " + col)
-        setstate({selectedColor: col, attemptsMade: state.attemptsMade})
+    function colorProvider(color: string) {
+        console.log("Color Provided: " + color)
+        setGameState(preVal => ({...preVal, selectedColor: color}))
     }
 
-    function colorAcceptor(colId: number) {
-        console.log("Color Received: " + colId)
+    function colorAcceptor(pegPosition: number) {
+        console.log("pegPosition Received: " + pegPosition)
     }
 
     return (
         <div className="GameContainer">
-            <div className="filler"></div>
-            {/* <Attempts /> */}
-            <ColorPalette colorMap={colorList} action={colorProvider}/>
+            {/* <div className="filler"></div> */}
+            <AttemptsContainer boardColors={boardColors} attemptsMade={gameState.attemptsMade} selectedColor={gameState.selectedColor} action={colorAcceptor}/>
+            <ColorPalette colorMap={COLOR_LIST} action={colorProvider}/>
         </div>
     );
 }

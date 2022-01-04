@@ -1,0 +1,6 @@
+.attemptContainer{
+    display: flex;
+    margin: 10px;
+    border: 1px solid black;
+    flex-direction: row;
+}

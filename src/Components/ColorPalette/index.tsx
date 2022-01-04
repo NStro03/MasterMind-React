@@ -6,8 +6,8 @@ function ColorPalette(props: { colorMap: string[], action: Function }) {
 
     console.log("Colors imported:\n" + props.colorMap);
 
-    const colorComponents = props.colorMap.slice(1, props.colorMap.length).map((color: string) =>
-        <ColorContainer key={color.slice(1, color.length)} myColor={color} action={props.action} />
+    const colorComponents = props.colorMap.map((color: string) =>
+        <ColorContainer key={props.colorMap.lastIndexOf(color).toString()} myColor={color} action={props.action} selectedColor={""} />
     )
 
     return (
