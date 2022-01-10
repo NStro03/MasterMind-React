@@ -30,7 +30,7 @@ function Game() {
         <div className="GameContainer">
             {/* <div className="filler"></div> */}
             <AttemptsContainer boardColors={boardColors} attemptsMade={gameState.attemptsMade} selectedColor={gameState.selectedColor} action={colorAcceptor}/>
-            <ColorPalette colorMap={COLOR_LIST} action={colorProvider}/>
+            <ColorPalette colorMap={COLOR_LIST} selectedColor={gameState.selectedColor} action={colorProvider}/>
         </div>
     );
 }

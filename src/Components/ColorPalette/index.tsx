@@ -2,12 +2,12 @@ import React from "react";
 import ColorContainer from "../ColorContainer";
 import "./style.css"
 
-function ColorPalette(props: { colorMap: string[], action: Function }) {
+function ColorPalette(props: { colorMap: string[], selectedColor:string, action: Function }) {
 
     console.log("Colors imported:\n" + props.colorMap);
 
     const colorComponents = props.colorMap.map((color: string, position: number) =>
-        <ColorContainer key={position} myColor={color} myPosition={position} action={props.action} />
+        <ColorContainer key={position} myColor={color} myPosition={position} action={props.action} isSelectedInPalette={props.selectedColor === color} />
     )
 
     return (
