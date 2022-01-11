@@ -1,0 +1,20 @@
+.smallCircle {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 3px;
+}
+
+.correctColorIncorrectPosition {
+    background-color: azure;
+}
+
+.correctColorCorrectPosition {
+    background-color: black;
+}
+
+.incorrectColor {
+    background-color: red;
+}

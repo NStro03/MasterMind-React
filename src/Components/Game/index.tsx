@@ -3,14 +3,14 @@ import ColorPalette from "../ColorPalette";
 import "./style.css"
 import {COLOR_LIST, INITIAL_GAME_STATE, TOTAL_ATTEMPTS} from "../Utils/constants";
 import AttemptsContainer from "../AttemptsContainer";
-import { initializeBoard } from "../Utils/util";
+import { initializeBoard, initializeBoardHints } from "../Utils/util";
 
 
 function Game() {
 
     const [gameState, setGameState] = useState(INITIAL_GAME_STATE)
     const [boardColors, setboardColors] = useState(initializeBoard())
-    // const [boardHints, setBoardHints] = useState(initialBoardHints)
+    const [boardHints, setBoardHints] = useState(initializeBoardHints())
 
     function colorProvider(colorIndex: number) {
         console.log("Color Provided: " + COLOR_LIST[colorIndex])
@@ -21,7 +21,7 @@ function Game() {
         console.log("pegPosition Received: " + pegPosition)
         var newBoardColors = [...boardColors]
         let oldColor = newBoardColors[gameState.attemptsMade].splice(pegPosition, 1, gameState.selectedColor)
-        console.log("Chnaged from " + oldColor + " --> " + gameState.selectedColor)
+        console.log("Changed from " + oldColor + " --> " + gameState.selectedColor)
 
         setboardColors(newBoardColors);
     }
@@ -29,7 +29,7 @@ function Game() {
     return (
         <div className="GameContainer">
             {/* <div className="filler"></div> */}
-            <AttemptsContainer boardColors={boardColors} attemptsMade={gameState.attemptsMade} selectedColor={gameState.selectedColor} action={colorAcceptor}/>
+            <AttemptsContainer boardColors={boardColors} boardHints={boardHints} attemptsMade={gameState.attemptsMade} selectedColor={gameState.selectedColor} action={colorAcceptor}/>
             <ColorPalette colorMap={COLOR_LIST} selectedColor={gameState.selectedColor} action={colorProvider}/>
         </div>
     );

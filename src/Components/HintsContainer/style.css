@@ -1,0 +1,4 @@
+.hintsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

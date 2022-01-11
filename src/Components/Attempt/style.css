@@ -3,4 +3,16 @@
     margin: 10px;
     border: 1px solid black;
     flex-direction: row;
+    width: 70%;
+}
+
+.attemptColorsContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.attemptHintContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 15%;
 }
