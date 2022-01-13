@@ -1,4 +1,4 @@
-import { DEFAULT_HINT_COLOR, DEFAULT_PEG_COLOR, PEGS_PER_ATTEMPT, TOTAL_ATTEMPTS } from "./constants";
+import { COLOR_LIST, DEFAULT_HINT_COLOR, DEFAULT_PEG_COLOR, PEGS_PER_ATTEMPT, TOTAL_ATTEMPTS } from "./constants";
 
 // defaultPegColor: string, pegsPerAttempt: number, totalAttempts:number
 export function initializeBoard() {
@@ -30,4 +30,15 @@ export function initializeBoardHints() {
     }
 
     return boardHints;
+}
+
+export function generateSolution(){
+    const solution = []
+    for (let i = 0; i < PEGS_PER_ATTEMPT; i++) {
+        solution.push(Math.floor(Math.random() * (COLOR_LIST.length)));
+        
+    }
+    console.log("Solution: ")
+    console.log(solution)
+    return solution;
 }

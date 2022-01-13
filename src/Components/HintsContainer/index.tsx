@@ -1,8 +1,8 @@
 import Hint from "../Hint";
 
 function HintsContainer(props:{attemptHints: Array<string>}) {
-    const hintComponents = props.attemptHints.map((hintType: string) => 
-    <Hint type={hintType} />
+    const hintComponents = props.attemptHints.map((hintType: string, index: number) => 
+    <Hint hintType={hintType} key={index}/>
     )
 
     return(

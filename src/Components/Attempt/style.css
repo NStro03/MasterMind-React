@@ -16,3 +16,10 @@
     flex-wrap: wrap;
     width: 15%;
 }
+
+.checkSolutionContainer {
+    display: flex;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+}
