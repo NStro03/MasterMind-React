@@ -6,11 +6,3 @@
     min-width: 500px;
     justify-content: center;
 }
-
-.filler{
-    width: 80%;
-    /* height: 10px; */
-    background: blue;
-    border: 1px solid black;
-    margin: 20px;
-}

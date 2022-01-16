@@ -1,6 +1,7 @@
+// Local Imports
 import { FcApproval } from "react-icons/fc";
 
-function CheckSolution(props:{checkSolutionAction: Function}) {
+function CheckSolution(props:{checkSolutionAction: () => void}) {
     return(
         <div onClick={() => props.checkSolutionAction()}><FcApproval /></div>
     )

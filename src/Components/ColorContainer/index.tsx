@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+// Local Imports
 import { DEFAULT_PEG_COLOR } from "../Utils/constants";
 import "./style.css"
 
 type ColorContainerProp = {
     myColor: string,
     myPosition: number,
-    action: Function | null,
+    action?: Function,
     isSelectedInPalette: boolean
 }
-function ColorContainer(props: ColorContainerProp) {
-    // const [myColor, setMyColor] = useState(0)
-    let circleClassName = "colorCircle";
-    // if(props.isSelectedInPalette){
-    //     circleClassName += " active"
-    // }
 
-    // 
+function ColorContainer(props: ColorContainerProp) {
 
     return (
         <div className="colorCircle" style={
