@@ -1,4 +1,4 @@
-import React from "react";
+// Local Imports
 import "./style.css"
 
 function Footer() {

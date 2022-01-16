@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+// Local Imports
 import { DEFAULT_PEG_COLOR } from "../Utils/constants";
 import "./style.css"
 
-function ColorContainer(props: {myColor: string, myPosition: number, action: Function | null, isSelectedInPalette: boolean}) {  
-    // const [myColor, setMyColor] = useState(0)
-    let circleClassName = "colorCircle";
-    // if(props.isSelectedInPalette){
-    //     circleClassName += " active"
-    // }
+type ColorContainerProp = {
+    myColor: string,
+    myPosition: number,
+    action?: Function,
+    isSelectedInPalette: boolean
+}
 
-    // 
+function ColorContainer(props: ColorContainerProp) {
 
     return (
         <div className="colorCircle" style={
-             {backgroundColor: props.myColor === "" ? DEFAULT_PEG_COLOR : props.myColor, 
-             borderWidth: props.isSelectedInPalette ? "2px" : "1px"}
+            {
+                backgroundColor: props.myColor === "" ? DEFAULT_PEG_COLOR : props.myColor,
+                borderWidth: props.isSelectedInPalette ? "2px" : "1px"
+            }
         } onClick={() => props.action?.(props.myPosition)}></div>
     )
 }

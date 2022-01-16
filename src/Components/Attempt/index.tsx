@@ -1,25 +1,43 @@
-import React, { useState } from "react";
+// Local Imports
+import CheckSolution from "../CheckSolution";
 import ColorContainer from "../ColorContainer";
 import HintsContainer from "../HintsContainer";
+import { DEFAULT_PEG_COLOR } from "../Utils/constants";
 import "./style.css"
 
-function Attempt(props: { isActive: boolean, action: Function, attemptColors: Array<string>, attemptHints: Array<string> }) {
+type AttemptProp = { 
+    isActive: boolean, 
+    action: (pegPosition: number) => void, 
+    attemptColors: Array<string>, 
+    attemptHints: Array<string>, 
+    checkSolutionAction: () => void 
+}
+
+function Attempt(props: AttemptProp) {
 
     const colorComponents = props.attemptColors.map((iterColor: string, position: number) =>
-        <ColorContainer myColor={iterColor} myPosition={position} action={props.isActive ? props.action : null} key={position} isSelectedInPalette={false} />
+        <ColorContainer myColor={iterColor} myPosition={position} action={props.isActive ? props.action : undefined} key={position} isSelectedInPalette={false} />
     )
 
-    // Array.from({ length: 4 },
-    //     (_, i) => <ColorContainer myColor={-props.attemptState[i]} selectedColor={props.selectedColor} action={props.action} />
-    // )
+    const haveWhite = (color: string) => color === DEFAULT_PEG_COLOR;
 
     return (
-        <div className="attemptContainer">
+        <div className="attemptContainer" style={
+            props.isActive ? {
+                borderWidth: "2px",
+                borderColor: "lightseagreen"
+            } : undefined
+        }>
             <div className="attemptColorsContainer">
                 {colorComponents}
             </div>
+            <div className="checkSolutionContainer">
+                {
+                    (props.isActive && !props.attemptColors.some(haveWhite)) ? <CheckSolution checkSolutionAction={props.checkSolutionAction} /> : null
+                }
+            </div>
             <div className="attemptHintContainer">
-                <HintsContainer attemptHints={props.attemptHints}/>
+                <HintsContainer attemptHints={props.attemptHints} />
             </div>
         </div>
     )

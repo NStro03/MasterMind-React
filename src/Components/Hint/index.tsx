@@ -1,15 +1,10 @@
-import { DEFAULT_HINT_COLOR } from "../Utils/constants";
+// Local Imports
 import "./style.css"
 
-function Hint(props:{type:string}) {
-    var hintClassName = DEFAULT_HINT_COLOR;
-        if( props.type !== ""){
-            hintClassName = props.type;
-        }
+function Hint(props:{hintType:string}) {
 
     return(
-        
-        <div className={"smallCircle " + hintClassName}></div>
+        <div className={"smallCircle " + props.hintType} />
     )
 }
 
