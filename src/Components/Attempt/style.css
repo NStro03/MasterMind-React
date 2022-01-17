@@ -3,18 +3,22 @@
     margin: 10px;
     border: 1px solid black;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .attemptColorsContainer{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .attemptHintContainer{
     display: flex;
     flex-wrap: wrap;
     width: 15%;
+    min-width: 30px;
+    max-width: 40px;
 }
 
 .checkSolutionContainer {
