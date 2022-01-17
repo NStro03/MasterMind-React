@@ -1,3 +1,5 @@
+import React from "react";
+
 // Local Imports
 import { DEFAULT_PEG_COLOR } from "../Utils/constants";
 import "./style.css"

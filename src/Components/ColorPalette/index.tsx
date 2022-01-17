@@ -1,3 +1,4 @@
+import React from "react";
 // Local Imports
 import ColorContainer from "../ColorContainer";
 import "./style.css"

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import swal from 'sweetalert';
 
 // Local Imports
 import ColorPalette from "../ColorPalette";
 import AttemptsContainer from "../AttemptsContainer";
-import { COLOR_LIST, INITIAL_GAME_STATE, PEGS_PER_ATTEMPT, TOTAL_ATTEMPTS } from "../Utils/constants";
+import { COLOR_LIST, INITIAL_GAME_STATE, TOTAL_ATTEMPTS } from "../Utils/constants";
 import { generateSolution, initializeBoard, initializeBoardHints, verifyAttempt } from "../Utils/util";
 import "./style.css"
 
@@ -26,7 +26,7 @@ function Game() {
 
     function colorAcceptor(pegPosition: number) {
         var newBoardColors = [...boardColors]
-        let oldColor = newBoardColors[gameState.attemptsMade].splice(pegPosition, 1, gameState.selectedColor)
+        newBoardColors[gameState.attemptsMade].splice(pegPosition, 1, gameState.selectedColor)
 
         setboardColors(newBoardColors);
     }

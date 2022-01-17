@@ -1,3 +1,5 @@
+import React from "react";
+
 // Local Imports
 import CheckSolution from "../CheckSolution";
 import ColorContainer from "../ColorContainer";
