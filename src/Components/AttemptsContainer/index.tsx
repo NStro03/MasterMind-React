@@ -1,3 +1,5 @@
+import React from "react";
+
 // Local Imports
 import Attempt from "../Attempt";
 import "./style.css";

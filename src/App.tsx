@@ -1,3 +1,6 @@
+import React from 'react';
+
+// Local Imports
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Rules from './Components/Rules';

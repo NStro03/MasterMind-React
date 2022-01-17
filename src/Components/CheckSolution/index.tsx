@@ -1,3 +1,5 @@
+import React from "react";
+
 // Local Imports
 import { FcApproval } from "react-icons/fc";
 
